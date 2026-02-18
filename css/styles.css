@@ -327,10 +327,6 @@ a {
   flex-wrap: wrap;
 }
 
-.our-portfolio-list:last-child {
-  margin-bottom: 0;
-}
-
 .our-portfolio-item {
   width: calc((100% - 48px) / 3);
 }
