@@ -21,11 +21,16 @@ body {
   color: var(--slate);
 }
 
+img {
+  display: block;
+}
+
 ul,
 ol {
   list-style: none;
   margin-block-start: 0;
   margin-block-end: 0;
+  padding-inline-start: 0;
 }
 
 h1,
@@ -48,8 +53,22 @@ a {
   color: inherit;
 }
 
+.container {
+  max-width: 1158px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .page-header {
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
 }
 
 .logo {
@@ -60,6 +79,9 @@ a {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--iris);
+  display: flex;
+  align-items: center;
+  flex-direction: row;
   max-height: max-content;
   margin-right: 76px;
 }
@@ -69,8 +91,16 @@ a {
 }
 
 .header-nav .nav-list {
+  display: flex;
+  align-items: flex-start;
   justify-content: flex-start;
   max-height: max-content;
+  gap: 40px;
+}
+
+.nav-item {
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .nav-link {
@@ -92,7 +122,11 @@ a {
 }
 
 .contacts .contacts-list {
+  display: flex;
+  align-items: flex-start;
   justify-content: flex-end;
+  flex-direction: row;
+  gap: 40px;
 }
 
 .contacts-link {
@@ -110,16 +144,24 @@ a {
 }
 
 .main-content {
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 188px 0;
   background: var(--navy-blue);
-  margin: auto;
-  justify-items: center;
+  width: 100%;
 }
 
 .hero-title {
+  width: 512px;
   font-weight: 700;
   font-size: 56px;
   line-height: 1.07;
@@ -130,7 +172,11 @@ a {
 }
 
 .hero-button {
+  border-radius: 4px;
+  padding-block: 16px;
+  padding-inline: 32px;
   border: none;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   background-color: var(--iris);
   font-weight: 500;
   font-size: 16px;
@@ -146,8 +192,31 @@ a {
   background-color: var(--ocean);
 }
 
+.benefits {
+  display: flex;
+  align-items: center;
+  padding: 120px 0;
+  width: 100%;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .benefits-list {
+  display: flex;
+  align-items: center;
   justify-content: center;
+  gap: 24px;
 }
 
 .benefits-item .benefits-subtitle {
@@ -168,8 +237,12 @@ a {
 }
 
 .our-team {
+  display: grid;
+  align-items: center;
   align-content: center;
+  padding: 120px 0;
   background-color: var(--cloud);
+  width: 100%;
 }
 
 .our-team .our-team-title,
@@ -185,10 +258,22 @@ a {
 }
 
 .our-team .our-team-list {
+  display: flex;
+  align-items: center;
   justify-content: center;
+  gap: 24px;
 }
 
 .our-team-item {
+  border-radius: 0 0 4px 4px;
+  padding-block: 0px 32px;
+  padding-inline: 0px;
+  width: 264px;
+  height: 380px;
+  box-shadow:
+    0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16),
+    0 1px 6px 0 rgba(46, 47, 66, 0.08);
   background-color: var(--white);
 }
 
@@ -213,12 +298,20 @@ a {
 }
 
 .our-portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   align-content: center;
+  padding: 120px 0;
 }
 
 .our-portfolio-list {
+  display: flex;
+  align-items: center;
   justify-content: center;
+  gap: 24px;
   margin-bottom: 48px;
+  flex-wrap: wrap;
 }
 
 .our-portfolio-list:last-child {
@@ -232,6 +325,11 @@ a {
   letter-spacing: 0.02em;
   color: var(--navy-blue);
   margin-bottom: 8px;
+  border-bottom: 1px solid var(--cornflower);
+  border-left: 1px solid var(--cornflower);
+  border-right: 1px solid var(--cornflower);
+  padding-block: 32px;
+  padding-inline: 16px;
 }
 
 .our-portfolio-item .our-portfolio-descr {
@@ -243,6 +341,9 @@ a {
 }
 
 .page-footer {
+  width: 100%;
+  padding-top: 101.5px;
+  padding-bottom: 100px;
   background-color: var(--navy-blue);
   margin: 0 auto;
   align-content: center;
@@ -262,4 +363,5 @@ a {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--cloud);
+  max-width: 272px;
 }
